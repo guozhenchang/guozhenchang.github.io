@@ -24,7 +24,7 @@ document.body.appendChild(game.div);
 var resize = function () {
  ww = Math.ceil(window.innerWidth);
  hh = Math.ceil(window.innerHeight);
- 
+
  var fblikebox = document.getElementById('fblikebox');
  var googbox = document.getElementById('googbox');
  if (fblikebox) {
@@ -42,17 +42,17 @@ var resize = function () {
    }
   }
  }
- 
+
  game.div.style.width = ww+'px';
  game.div.style.height = hh+'px';
- 
+
  pipe_center = (hh - 88)/2;
- 
+
  game.canvas.width = ww;
  game.canvas.height = hh;
  game.ctx.fillStyle = '#71c5cf';
  game.ctx.fillRect(0, 0, ww, hh);
- 
+
  ground.canvas.width = ww;
  ground.canvas.height = 88;
  ground.ctx.fillStyle = '#ddd894';
@@ -62,17 +62,17 @@ var resize = function () {
   ground.ctx.drawImage(ground.bit, gx, 0);
   gx += 48;
  }
- 
+
  ground.canvas.style.left = '0px';
  ground.canvas.style.top = (hh - 88)+'px';
- 
- 
+
+
  logo.reposition();
  gameover.reposition();
  c2s.reposition();
  //fbshare.reposition();
  playagain.reposition();
- 
+
 
  parody.div.style.left = Math.round((ww - 800)/2)+'px';
  parody.div.style.top = (hh - 28)+'px';
@@ -87,8 +87,8 @@ var resize = function () {
    div.style.top = (yy + 20)+'px';
   }
  }
- 
- 
+
+
  city.canvas.width = ww;
  city.canvas.height = 256;
  city.ctx.clearRect(0, 0, ww, 256);
@@ -97,16 +97,16 @@ var resize = function () {
   city.ctx.drawImage(city.bit, gx, 0);
   gx += 300;
  }
- 
+
  city.canvas.style.left = '0px';
  city.canvas.style.top = (hh - 256 - 88)+'px';
- 
- 
- 
- 
- 
- 
- 
+
+
+
+
+
+
+
  trees.canvas.width = ww;
  trees.canvas.height = 216;
  trees.ctx.clearRect(0, 0, ww, 216);
@@ -115,24 +115,24 @@ var resize = function () {
   trees.ctx.drawImage(trees.bit, gx, 0);
   gx += 300;
  }
- 
+
  trees.canvas.style.left = '0px';
  trees.canvas.style.top = (hh - 216 - 88)+'px';
- 
- 
- 
- 
- 
+
+
+
+
+
  pipe_x = Math.floor(ww/2 - 148/2);
- 
+
  pipe1.img.style.left = pipe_x+'px';
  pipe2.img.style.left = pipe_x+'px';
- 
+
  for (var i = bloods.length-1; i>=0; i--) {
   var blood = bloods[i];
   repositionBlood(blood);
  }
- 
+
 }
 
 var want_image_count = 0;
@@ -153,11 +153,11 @@ var loadGameImage = function (n) {
 var want_sound_count = 0;
 var loadGameSound = function (n, chc) { // file name, channel count
  var o = {};
- 
+
  o.channels = [];
  o.channel_pos = 0;
  o.chc = chc;
- 
+
  o.play = function () {
   var tm = new Date().getTime();
   var sc = this.channels.length;
@@ -178,12 +178,12 @@ var loadGameSound = function (n, chc) { // file name, channel count
    //ch.sound.currentTime = 1;
    ch.sound.play();
    //ch.can_play = false;
-   
+
    //sounds_playing.push(ch);
   }
  }
- 
- 
+
+
  //want_sound_count++;
  /*
  var ao = document.createElement("audio");
@@ -201,7 +201,7 @@ var loadGameSound = function (n, chc) { // file name, channel count
   sch.sound = this;
   //sch.can_play = true;
   o.channels.push(sch);
-  
+
   if ((want_image_count == 0) && (want_sound_count == 0)) {
    gameLoaded();
   }
@@ -249,19 +249,19 @@ var gameLoaded = function () {
  resize();
  raf(oef);
  oef();
- 
+
  //document.body.addEventListener("touchstart", poundPipes, false);
- 
+
  document.body.onmousedown = function () {
   poundPipes();
  }
- 
+
  document.body.onkeydown = function (e) {
   if (e.keyCode == 32) {
    poundPipes();
   }
  }
- 
+
 }
 
 
@@ -492,7 +492,7 @@ parody.div.style.textAlign = 'center';
 parody.div.style.fontFamily = 'Verdana';
 parody.div.style.fontSize = '12px';
 parody.div.style.zIndex = 87654;
-parody.div.innerHTML = '适用浏览器：360、FireFox、Chrome、Safari、Opera、傲游、搜狗、世界之窗. 不支持IE8及以下浏览器。来源：<a href="http://sc.chinaz.com/" target="_blank">站长素材</a>';
+
 
 var points = 0;
 var highscore = 0;
@@ -518,8 +518,8 @@ for (var xx = -3; xx <= 3; xx++) {
   div.style['-moz-user-select'] = 'none';
   div.style['-ms-user-select'] = 'none';
   div.style['-o-user-select'] = 'none';
-  
-  
+
+
   /*
   -webkit-user-select: none; // Chrome/Safari
   -moz-user-select: none; // Firefox
@@ -529,7 +529,7 @@ for (var xx = -3; xx <= 3; xx++) {
   -o-user-select: none;
   user-select: none;
   */
-  
+
   if (xx == 0 && yy == 0) {
    div.style.color = '#FFFFFF';
    div.style.zIndex = 88888;
@@ -696,7 +696,7 @@ var oef = function () {
    if (want_pound) {
     want_pound = !poundPipes();
    }
-   
+
    /*
    for (var i = sounds_playing.length-1; i>=0; i--) {
     var ch = sounds_playing[i];
@@ -707,7 +707,7 @@ var oef = function () {
     }
    }
    */
-   
+
    if (logo.showing) {
     logo.a += .03;
     if (logo.a >= 1) {
@@ -739,7 +739,7 @@ var oef = function () {
      logo.img.style.display = 'none';
     }
    }
-   
+
    if (gameover.showing) {
     gameover.a += .03;
     if (gameover.a >= 1) {
@@ -771,7 +771,7 @@ var oef = function () {
      gameover.img.style.display = 'none';
     }
    }
-   
+
   /* if (fbshare.showing) {
     fbshare.a += .03;
     if (fbshare.a >= 1) {
@@ -803,7 +803,7 @@ var oef = function () {
      fbshare.img.style.display = 'none';
     }
    }*/
-   
+
    if (playagain.showing) {
     playagain.a += .03;
     if (playagain.a >= 1) {
@@ -863,13 +863,13 @@ var oef = function () {
      c2s.img.style.display = 'none';
     }
    }
-   
+
    if (clanging >= 0) {
     clanging--;
     pipe1.img.style.left = (pipe_x + Math.cos(fr*Math.PI)*3)+'px';
     pipe2.img.style.left = (pipe_x + Math.cos(fr*Math.PI)*3)+'px';
    }
-   
+
    pipe1.img.style.top = (pipe_center - 1664 - pipe_gap/2)+'px';
    pipe2.img.style.top = (pipe_center + pipe_gap/2)+'px';
    if (pipe_opening >= 0) {
@@ -939,7 +939,7 @@ var oef = function () {
     new_points *= kill_combo;
     new_points = Math.pow(new_points, 2);
     if (new_points == 0) {
-     
+
     } else if (new_points == 1) {
      coin1.play();
     } else if (new_points < 8) {
@@ -1050,12 +1050,12 @@ var oef = function () {
            bird.ar = Math.random()*6 - 3;
            kicks[Math.min(bird.anger, 4)].play();
            bird.anger++;
-          
+
           }
          }
         }
        }
-      
+
       }
      }
      if (bird.xx > (pipe_x + 148 + 200)) {
