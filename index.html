@@ -1,166 +1,133 @@
-<!DOCTYPE html>
-<html lang="en"><head><script charset="utf-8" src="%E6%97%8B%E8%BD%AC%E6%99%BA%E5%8A%9B%E6%8B%BC%E5%9B%BE_files/shares.js"></script><!-- base href="http://www.webhek.com/apps/color-spin/" -->
-
-
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link href="%E6%97%8B%E8%BD%AC%E6%99%BA%E5%8A%9B%E6%8B%BC%E5%9B%BE_files/layout.css" rel="stylesheet" type="text/css">
-<!--<link href='mobile.css' rel='stylesheet' type='text/css'>-->
-
-
-<script src="%E6%97%8B%E8%BD%AC%E6%99%BA%E5%8A%9B%E6%8B%BC%E5%9B%BE_files/analytics.js" async=""></script><script src="%E6%97%8B%E8%BD%AC%E6%99%BA%E5%8A%9B%E6%8B%BC%E5%9B%BE_files/jia.js" async="" type="text/javascript"></script><script type="text/javascript" src="%E6%97%8B%E8%BD%AC%E6%99%BA%E5%8A%9B%E6%8B%BC%E5%9B%BE_files/jquery-2.js"></script>
-<script type="text/javascript" src="%E6%97%8B%E8%BD%AC%E6%99%BA%E5%8A%9B%E6%8B%BC%E5%9B%BE_files/jquery.js"></script>
-<script type="text/javascript" src="%E6%97%8B%E8%BD%AC%E6%99%BA%E5%8A%9B%E6%8B%BC%E5%9B%BE_files/game.js"></script>
-
-<title>郭小胖的小站:)</title>
-<meta name="description" content="这是一个HTML5 jQuery 益智游戏，玩家需要调换图形的位置来实现目标图案。">
+<title>压扁小鸟</title>
+<meta name="description" content="你恨 flappy bird 吗?你每天晚上对着那个愚蠢的鸟做噩梦吗？ 压扁它们！.">
+<meta property="og:description" content="你恨 flappy bird 吗?你每天晚上对着那个愚蠢的鸟做噩梦吗？ 压扁它们！.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Squishy Bird">
+<meta property="og:site_name" content="Squishy Birds">
+<meta property="og:image" content="./src/wav/fbthumb.jpg">
+<meta name="viewport" content="user-scalable=no, initial-scale=0.5, width=610, height=1024">
+<link rel="image_src" href="./src/wav/fbthumb.jpg">
 </head>
-
-<body><link type="text/css" rel="stylesheet" href="%E6%97%8B%E8%BD%AC%E6%99%BA%E5%8A%9B%E6%8B%BC%E5%9B%BE_files/jiathis_counter.css"><link type="text/css" rel="stylesheet" href="%E6%97%8B%E8%BD%AC%E6%99%BA%E5%8A%9B%E6%8B%BC%E5%9B%BE_files/jiathis_share.css"><iframe style="position: fixed; display: none; opacity: 0;" frameborder="0"></iframe><div style="position: absolute; z-index: 1000000000; display: none; top: 50%; left: 50%; overflow: auto;" class="jiathis_style"></div><div style="position: absolute; z-index: 1000000000; display: none; overflow: auto;" class="jiathis_style"></div><iframe src="%E6%97%8B%E8%BD%AC%E6%99%BA%E5%8A%9B%E6%8B%BC%E5%9B%BE_files/jiathis_utility.html" style="display: none;" frameborder="0"></iframe>
-<div id="contact"></div>
-<div id="wrap">
-<div id="title"><h1>旋转拼图</h1>
-<span id="pause">暂停</span>
+<body style="margin: 0px; overflow: hidden;-moz-user-select: none;-webkit-user-select: none;user-select: none;"  >
+<div id="lgd" style="width: 300px; height: 64px; position: absolute; left: 533px; top: 301px; font-family: Verdana; font-size: 16px; font-weight: bold; text-align: center;">Loading...</div>
+<script type="text/javascript" src="./src/squishybird.js"></script>
+<div style="overflow: hidden; position: relative; width: 1366px; height: 620px;">
+  <canvas width="1366" height="620"></canvas>
+  <img src="./src/wav/pipe1.png" width="148" height="1664" style="position: absolute; left: 609px; top: -1533px; z-index: 420;"><img src="./src/wav/pipe2.png" width="148" height="1664" style="position: absolute; left: 609px; top: 400.9999999999999px; z-index: 420;">
+  <canvas width="1366" height="88" style="position: absolute; z-index: 31337; left: 0px; top: 532px;"></canvas>
+  <canvas width="1366" height="256" style="position: absolute; z-index: 60; left: 0px; top: 276px;"></canvas>
+  <canvas width="1366" height="216" style="position: absolute; z-index: 61; left: 0px; top: 316px;"></canvas>
+  <img src="./src/wav/logo.png" style="position: absolute; opacity: 0; z-index: 42069; left: 370px; top: 174px; display: none;"><img src="./src/wav/gameover.png" style="position: absolute; opacity: 1; z-index: 42069; left: 370px; top: 93px; display: inline;"><img src="./src/wav/clicktostart.png" style="position: absolute; opacity: 0; z-index: 42070; left: 514px; top: 435px; display: none;">
+  <div style="width: 800px; height: 24px; position: absolute; text-align: center; font-family: Verdana; font-size: 12px; z-index: 87654; left: 283px; top: 592px; display: none;">适用浏览器：360、FireFox、Chrome、Safari、Opera、傲游、搜狗、世界之窗. 不支持IE8及以下浏览器。</div>
+  <div style="width: 300px; height: 50px; position: absolute; text-align: center; font-family: Verdana; font-weight: bold; font-size: 30px; color: rgb(0, 0, 0); z-index: 88887; -webkit-user-select: none; left: 536px; top: 23px;">0</div>
+  <div style="width: 300px; height: 50px; position: absolute; text-align: center; font-family: Verdana; font-weight: bold; font-size: 30px; color: rgb(0, 0, 0); z-index: 88887; -webkit-user-select: none; left: 536px; top: 22px;">0</div>
+  <div style="width: 300px; height: 50px; position: absolute; text-align: center; font-family: Verdana; font-weight: bold; font-size: 30px; color: rgb(0, 0, 0); z-index: 88887; -webkit-user-select: none; left: 536px; top: 21px;">0</div>
+  <div style="width: 300px; height: 50px; position: absolute; text-align: center; font-family: Verdana; font-weight: bold; font-size: 30px; color: rgb(0, 0, 0); z-index: 88887; -webkit-user-select: none; left: 536px; top: 20px;">0</div>
+  <div style="width: 300px; height: 50px; position: absolute; text-align: center; font-family: Verdana; font-weight: bold; font-size: 30px; color: rgb(0, 0, 0); z-index: 88887; -webkit-user-select: none; left: 536px; top: 19px;">0</div>
+  <div style="width: 300px; height: 50px; position: absolute; text-align: center; font-family: Verdana; font-weight: bold; font-size: 30px; color: rgb(0, 0, 0); z-index: 88887; -webkit-user-select: none; left: 536px; top: 18px;">0</div>
+  <div style="width: 300px; height: 50px; position: absolute; text-align: center; font-family: Verdana; font-weight: bold; font-size: 30px; color: rgb(0, 0, 0); z-index: 88887; -webkit-user-select: none; left: 536px; top: 17px;">0</div>
+  <div style="width: 300px; height: 50px; position: absolute; text-align: center; font-family: Verdana; font-weight: bold; font-size: 30px; color: rgb(0, 0, 0); z-index: 88887; -webkit-user-select: none; left: 535px; top: 23px;">0</div>
+  <div style="width: 300px; height: 50px; position: absolute; text-align: center; font-family: Verdana; font-weight: bold; font-size: 30px; color: rgb(0, 0, 0); z-index: 88887; -webkit-user-select: none; left: 535px; top: 22px;">0</div>
+  <div style="width: 300px; height: 50px; position: absolute; text-align: center; font-family: Verdana; font-weight: bold; font-size: 30px; color: rgb(0, 0, 0); z-index: 88887; -webkit-user-select: none; left: 535px; top: 21px;">0</div>
+  <div style="width: 300px; height: 50px; position: absolute; text-align: center; font-family: Verdana; font-weight: bold; font-size: 30px; color: rgb(0, 0, 0); z-index: 88887; -webkit-user-select: none; left: 535px; top: 20px;">0</div>
+  <div style="width: 300px; height: 50px; position: absolute; text-align: center; font-family: Verdana; font-weight: bold; font-size: 30px; color: rgb(0, 0, 0); z-index: 88887; -webkit-user-select: none; left: 535px; top: 19px;">0</div>
+  <div style="width: 300px; height: 50px; position: absolute; text-align: center; font-family: Verdana; font-weight: bold; font-size: 30px; color: rgb(0, 0, 0); z-index: 88887; -webkit-user-select: none; left: 535px; top: 18px;">0</div>
+  <div style="width: 300px; height: 50px; position: absolute; text-align: center; font-family: Verdana; font-weight: bold; font-size: 30px; color: rgb(0, 0, 0); z-index: 88887; -webkit-user-select: none; left: 535px; top: 17px;">0</div>
+  <div style="width: 300px; height: 50px; position: absolute; text-align: center; font-family: Verdana; font-weight: bold; font-size: 30px; color: rgb(0, 0, 0); z-index: 88887; -webkit-user-select: none; left: 534px; top: 23px;">0</div>
+  <div style="width: 300px; height: 50px; position: absolute; text-align: center; font-family: Verdana; font-weight: bold; font-size: 30px; color: rgb(0, 0, 0); z-index: 88887; -webkit-user-select: none; left: 534px; top: 22px;">0</div>
+  <div style="width: 300px; height: 50px; position: absolute; text-align: center; font-family: Verdana; font-weight: bold; font-size: 30px; color: rgb(0, 0, 0); z-index: 88887; -webkit-user-select: none; left: 534px; top: 21px;">0</div>
+  <div style="width: 300px; height: 50px; position: absolute; text-align: center; font-family: Verdana; font-weight: bold; font-size: 30px; color: rgb(0, 0, 0); z-index: 88887; -webkit-user-select: none; left: 534px; top: 20px;">0</div>
+  <div style="width: 300px; height: 50px; position: absolute; text-align: center; font-family: Verdana; font-weight: bold; font-size: 30px; color: rgb(0, 0, 0); z-index: 88887; -webkit-user-select: none; left: 534px; top: 19px;">0</div>
+  <div style="width: 300px; height: 50px; position: absolute; text-align: center; font-family: Verdana; font-weight: bold; font-size: 30px; color: rgb(0, 0, 0); z-index: 88887; -webkit-user-select: none; left: 534px; top: 18px;">0</div>
+  <div style="width: 300px; height: 50px; position: absolute; text-align: center; font-family: Verdana; font-weight: bold; font-size: 30px; color: rgb(0, 0, 0); z-index: 88887; -webkit-user-select: none; left: 534px; top: 17px;">0</div>
+  <div style="width: 300px; height: 50px; position: absolute; text-align: center; font-family: Verdana; font-weight: bold; font-size: 30px; color: rgb(0, 0, 0); z-index: 88887; -webkit-user-select: none; left: 533px; top: 23px;">0</div>
+  <div style="width: 300px; height: 50px; position: absolute; text-align: center; font-family: Verdana; font-weight: bold; font-size: 30px; color: rgb(0, 0, 0); z-index: 88887; -webkit-user-select: none; left: 533px; top: 22px;">0</div>
+  <div style="width: 300px; height: 50px; position: absolute; text-align: center; font-family: Verdana; font-weight: bold; font-size: 30px; color: rgb(0, 0, 0); z-index: 88887; -webkit-user-select: none; left: 533px; top: 21px;">0</div>
+  <div style="width: 300px; height: 50px; position: absolute; text-align: center; font-family: Verdana; font-weight: bold; font-size: 30px; color: rgb(255, 255, 255); z-index: 88888; -webkit-user-select: none; left: 533px; top: 20px;">0</div>
+  <div style="width: 300px; height: 50px; position: absolute; text-align: center; font-family: Verdana; font-weight: bold; font-size: 30px; color: rgb(0, 0, 0); z-index: 88887; -webkit-user-select: none; left: 533px; top: 19px;">0</div>
+  <div style="width: 300px; height: 50px; position: absolute; text-align: center; font-family: Verdana; font-weight: bold; font-size: 30px; color: rgb(0, 0, 0); z-index: 88887; -webkit-user-select: none; left: 533px; top: 18px;">0</div>
+  <div style="width: 300px; height: 50px; position: absolute; text-align: center; font-family: Verdana; font-weight: bold; font-size: 30px; color: rgb(0, 0, 0); z-index: 88887; -webkit-user-select: none; left: 533px; top: 17px;">0</div>
+  <div style="width: 300px; height: 50px; position: absolute; text-align: center; font-family: Verdana; font-weight: bold; font-size: 30px; color: rgb(0, 0, 0); z-index: 88887; -webkit-user-select: none; left: 532px; top: 23px;">0</div>
+  <div style="width: 300px; height: 50px; position: absolute; text-align: center; font-family: Verdana; font-weight: bold; font-size: 30px; color: rgb(0, 0, 0); z-index: 88887; -webkit-user-select: none; left: 532px; top: 22px;">0</div>
+  <div style="width: 300px; height: 50px; position: absolute; text-align: center; font-family: Verdana; font-weight: bold; font-size: 30px; color: rgb(0, 0, 0); z-index: 88887; -webkit-user-select: none; left: 532px; top: 21px;">0</div>
+  <div style="width: 300px; height: 50px; position: absolute; text-align: center; font-family: Verdana; font-weight: bold; font-size: 30px; color: rgb(0, 0, 0); z-index: 88887; -webkit-user-select: none; left: 532px; top: 20px;">0</div>
+  <div style="width: 300px; height: 50px; position: absolute; text-align: center; font-family: Verdana; font-weight: bold; font-size: 30px; color: rgb(0, 0, 0); z-index: 88887; -webkit-user-select: none; left: 532px; top: 19px;">0</div>
+  <div style="width: 300px; height: 50px; position: absolute; text-align: center; font-family: Verdana; font-weight: bold; font-size: 30px; color: rgb(0, 0, 0); z-index: 88887; -webkit-user-select: none; left: 532px; top: 18px;">0</div>
+  <div style="width: 300px; height: 50px; position: absolute; text-align: center; font-family: Verdana; font-weight: bold; font-size: 30px; color: rgb(0, 0, 0); z-index: 88887; -webkit-user-select: none; left: 532px; top: 17px;">0</div>
+  <div style="width: 300px; height: 50px; position: absolute; text-align: center; font-family: Verdana; font-weight: bold; font-size: 30px; color: rgb(0, 0, 0); z-index: 88887; -webkit-user-select: none; left: 531px; top: 23px;">0</div>
+  <div style="width: 300px; height: 50px; position: absolute; text-align: center; font-family: Verdana; font-weight: bold; font-size: 30px; color: rgb(0, 0, 0); z-index: 88887; -webkit-user-select: none; left: 531px; top: 22px;">0</div>
+  <div style="width: 300px; height: 50px; position: absolute; text-align: center; font-family: Verdana; font-weight: bold; font-size: 30px; color: rgb(0, 0, 0); z-index: 88887; -webkit-user-select: none; left: 531px; top: 21px;">0</div>
+  <div style="width: 300px; height: 50px; position: absolute; text-align: center; font-family: Verdana; font-weight: bold; font-size: 30px; color: rgb(0, 0, 0); z-index: 88887; -webkit-user-select: none; left: 531px; top: 20px;">0</div>
+  <div style="width: 300px; height: 50px; position: absolute; text-align: center; font-family: Verdana; font-weight: bold; font-size: 30px; color: rgb(0, 0, 0); z-index: 88887; -webkit-user-select: none; left: 531px; top: 19px;">0</div>
+  <div style="width: 300px; height: 50px; position: absolute; text-align: center; font-family: Verdana; font-weight: bold; font-size: 30px; color: rgb(0, 0, 0); z-index: 88887; -webkit-user-select: none; left: 531px; top: 18px;">0</div>
+  <div style="width: 300px; height: 50px; position: absolute; text-align: center; font-family: Verdana; font-weight: bold; font-size: 30px; color: rgb(0, 0, 0); z-index: 88887; -webkit-user-select: none; left: 531px; top: 17px;">0</div>
+  <div style="width: 300px; height: 50px; position: absolute; text-align: center; font-family: Verdana; font-weight: bold; font-size: 30px; color: rgb(0, 0, 0); z-index: 88887; -webkit-user-select: none; left: 530px; top: 23px;">0</div>
+  <div style="width: 300px; height: 50px; position: absolute; text-align: center; font-family: Verdana; font-weight: bold; font-size: 30px; color: rgb(0, 0, 0); z-index: 88887; -webkit-user-select: none; left: 530px; top: 22px;">0</div>
+  <div style="width: 300px; height: 50px; position: absolute; text-align: center; font-family: Verdana; font-weight: bold; font-size: 30px; color: rgb(0, 0, 0); z-index: 88887; -webkit-user-select: none; left: 530px; top: 21px;">0</div>
+  <div style="width: 300px; height: 50px; position: absolute; text-align: center; font-family: Verdana; font-weight: bold; font-size: 30px; color: rgb(0, 0, 0); z-index: 88887; -webkit-user-select: none; left: 530px; top: 20px;">0</div>
+  <div style="width: 300px; height: 50px; position: absolute; text-align: center; font-family: Verdana; font-weight: bold; font-size: 30px; color: rgb(0, 0, 0); z-index: 88887; -webkit-user-select: none; left: 530px; top: 19px;">0</div>
+  <div style="width: 300px; height: 50px; position: absolute; text-align: center; font-family: Verdana; font-weight: bold; font-size: 30px; color: rgb(0, 0, 0); z-index: 88887; -webkit-user-select: none; left: 530px; top: 18px;">0</div>
+  <div style="width: 300px; height: 50px; position: absolute; text-align: center; font-family: Verdana; font-weight: bold; font-size: 30px; color: rgb(0, 0, 0); z-index: 88887; -webkit-user-select: none; left: 530px; top: 17px;">0</div>
+  <canvas width="150" height="150" style="z-index: 69; position: absolute; left: 880.7973799593747px; top: 288.1699138371274px;"></canvas>
+  <canvas width="150" height="150" style="z-index: 69; position: absolute; left: 94.18296936130267px; top: 175.22475277371694px;"></canvas>
+  <canvas width="150" height="150" style="z-index: 69; position: absolute; left: 147.39346598794316px; top: 196.6628938429057px;"></canvas>
+  <canvas width="150" height="150" style="z-index: 69; position: absolute; left: -235.79706690685066px; top: -486.7269952782424px;"></canvas>
 </div>
-<div id="boardwrap">
-<div id="how-to"><a href="http://www.webhek.com/apps/color-spin/how-to-play.html" target="_blank" title="How to play">玩法说明</a></div>
-
-<div id="turn1" class="allarr"> </div>
-<div id="turn2" class="allarr"></div>
-<div id="turn3" class="allarr"></div>
-<div id="turn4" class="allarr"></div>
-<div id="template"><div class="b"></div><div class="b"></div><div class="r"></div><div class="r"></div><div class="b"></div><div class="w"></div><div class="w"></div><div class="r"></div><div class="c"></div><div class="w"></div><div class="w"></div><div class="y"></div><div class="c"></div><div class="c"></div><div class="y"></div><div class="y"></div></div>
-
-
-
-<div id="levels">
-<div class="levelselect">等级一</div>
-<div>等级二</div>
-<div>等级三</div>
-<div>等级四</div>
-<div>等级五</div>
-</div>
-<div id="highscore">分数排名</div>
-<div id="info">
-<div id="timer">0:00:00</div>
-<div id="actions">步数: 0</div>
-<div id="scoring">
-<div id="awrap">
-<h1 id="ahead">步数排名</h1>
-<div id="spacer"></div>
-<ul>
-<li>1. <span></span></li>
-<li>2. <span></span></li>
-<li>3. <span></span></li>
-<li>4. <span></span></li>
-</ul>
-</div>
-<div id="twrap">
-<h1 id="thead">用时排名</h1>
-<div id="spacer"></div>
-<ul>
-<li>1. <span></span></li>
-<li>2. <span></span></li>
-<li>3. <span></span></li>
-<li>4. <span></span></li>
-</ul>
-</div><!--- score-->
-<div id="levinfo"></div>
-</div>
-
-</div>
-<div id="board">
-
-<div class="row1 col1 q1 q out b">
-   <div class="corwrap" id="c1">
- 		<div class="r-turn"></div>
- 		<div></div>
-  		<div class="l-turn"></div>
-  		<div></div>
-   </div>
-</div>
-<div class="row1 col2 q1 out b"></div>
-<div class="row1 col3 q2 out r"></div>
-<div class="row1 col4 q2 q out r">
-<div class="corwrap">
- 		<div class="l-turn"></div>
- 		<div class="r-turn"></div>
-  		<div></div>
-  		<div></div>
-  </div>
-</div>
-
-<div class="row2 col1 q1 out b"></div>
-<div class="row2 col2 q1 w"></div>
-<div class="row2 col3 q2 w"></div>
-<div class="row2 col4 q2 out r"></div>
-
-<div class="row3 col1 q3 out c"></div>
-<div class="row3 col2 q3 w"></div>
-<div class="row3 col3 q4 w"></div>
-<div class="row3 col4 q4 out y"></div>
-
-<div class="row4 col1 q3 q out c">
-<div class="corwrap">
-<div></div>
- <div></div>
- <div class="r-turn"></div>
- <div class="l-turn"></div>
-</div>
-
-
-</div>
-<div class="row4 col2 q3 out c"></div>
-<div class="row4 col3 q4 out y"></div><div class="row4 col4 q4 q y">
-<div class="corwrap">
-	<div></div>
-  	<div class="l-turn"> </div>
-  	<div></div>
- 	<div class="r-turn"></div>
-</div>
-
-</div>
-
-</div>
-<div id="overlay"><div id="aniselect"></div></div>
-</div>
-
-<div id="start">开始</div>
-<div id="winmessage"><span id="great">太<span class="letter1">棒</span>了<span class="letter2">你</span>！</span> <br> 你成功了！</div>
-<div id="go">开<span id="starta">始</span>！</div>
-</div>
-
-<div style="max-width:600px; margin: 0 auto;">
-	<div><!-- JiaThis Button BEGIN -->
-
-	<!-- JiaThis Button END --></div>
-
-	<div id="comment_area"><style type="text/css">
-    p#form-allowed-tags{display: none;}
-    #respond label{clear: both;display: block;}
-    #respond, .comments{padding: 10px; background-color: #eee; border-radius: 3px; margin-bottom: 15px;}
-    .comments ol{padding: 0}
-    </style><div class="comments"><ol></ol></div><div class="form">				<div id="respond" class="comment-respond">
-
-					</div><!-- #respond -->
-		</div></div>
-
-</div>
-
-<script type="text/javascript">
-	(function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = 'http://v3.jiathis.com/code/jia.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-</script>
-
-<script>  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');  ga('create', 'UA-2477810-34', 'auto');  ga('send', 'pageview');</script> <span id="pageendflag"></span>
-
-
-</body></html>
-<!-- Performance optimized by W3 Total Cache. Learn more: http://www.w3-edge.com/wordpress-plugins/
-
-Page Caching using disk: enhanced (User agent is rejected)
-
- Served from: www.webhek.com @ 2016-07-05 21:17:57 by W3 Total Cache -->
-<!-- 2016-7-5 21:17 static gzip-->
+<audio src="./src/wav/flap.wav"></audio>
+<audio src="./src/wav/flap.wav"></audio>
+<audio src="./src/wav/flap.wav"></audio>
+<audio src="./src/wav/flap.wav"></audio>
+<audio src="./src/wav/flap.wav"></audio>
+<audio src="./src/wav/slide.wav"></audio>
+<audio src="./src/wav/slide.wav"></audio>
+<audio src="./src/wav/slide.wav"></audio>
+<audio src="./src/wav/clang.wav"></audio>
+<audio src="./src/wav/clang.wav"></audio>
+<audio src="./src/wav/clang.wav"></audio>
+<audio src="./src/wav/coin.wav"></audio>
+<audio src="./src/wav/coin.wav"></audio>
+<audio src="./src/wav/coin.wav"></audio>
+<audio src="./src/wav/coin2.wav"></audio>
+<audio src="./src/wav/coin2.wav"></audio>
+<audio src="./src/wav/coin2.wav"></audio>
+<audio src="./src/wav/coin3.wav"></audio>
+<audio src="./src/wav/coin3.wav"></audio>
+<audio src="./src/wav/coin3.wav"></audio>
+<audio src="./src/wav/coin4.wav"></audio>
+<audio src="./src/wav/coin4.wav"></audio>
+<audio src="./src/wav/coin4.wav"></audio>
+<audio src="./src/wav/kick.wav"></audio>
+<audio src="./src/wav/kick.wav"></audio>
+<audio src="./src/wav/kick.wav"></audio>
+<audio src="./src/wav/kick.wav"></audio>
+<audio src="./src/wav/kick.wav"></audio>
+<audio src="./src/wav/kick2.wav"></audio>
+<audio src="./src/wav/kick2.wav"></audio>
+<audio src="./src/wav/kick2.wav"></audio>
+<audio src="./src/wav/kick2.wav"></audio>
+<audio src="./src/wav/kick2.wav"></audio>
+<audio src="./src/wav/kick3.wav"></audio>
+<audio src="./src/wav/kick3.wav"></audio>
+<audio src="./src/wav/kick3.wav"></audio>
+<audio src="./src/wav/kick3.wav"></audio>
+<audio src="./src/wav/kick3.wav"></audio>
+<audio src="./src/wav/kick4.wav"></audio>
+<audio src="./src/wav/kick4.wav"></audio>
+<audio src="./src/wav/kick4.wav"></audio>
+<audio src="./src/wav/kick4.wav"></audio>
+<audio src="./src/wav/kick4.wav"></audio>
+<audio src="./src/wav/kick5.wav"></audio>
+<audio src="./src/wav/kick5.wav"></audio>
+<audio src="./src/wav/kick5.wav"></audio>
+<audio src="./src/wav/kick5.wav"></audio>
+<audio src="./src/wav/kick5.wav"></audio>
+<audio src="./src/wav/squish1.wav"></audio>
+<audio src="./src/wav/squish1.wav"></audio>
+<audio src="./src/wav/squish1.wav"></audio>
+<audio src="./src/wav/squish2.wav"></audio>
+<audio src="./src/wav/squish2.wav"></audio>
+</body>
+</html>
