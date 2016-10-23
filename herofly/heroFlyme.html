@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#wrap{
+				box-shadow: 0 0 20px #333;
+				margin: 20px auto 0;
+				width: 320px;
+				height: 568px;
+				position: relative;
+			}
+			#loading,#gameover{
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				background: rgba(128,128,128,.5);
+				left: 0;
+				top: 0;
+				text-align: center;
+			}
+			#loading img{
+				margin-top: 200px;
+				margin-bottom: 20px;
+			}
+			#gameover{
+				display: none;
+			}
+			#gameover div{
+				width: 200px;
+				padding: 20px;
+				border-radius: 5px;
+				border: 1px solid #333;
+				margin: 200px auto 0;
+				background: rgba(211,211,211,.8);
+				font-size: 30px;
+				text-align: center;
+				line-height: 1.5;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<canvas id="cvs" width="320" height="568"></canvas>
+			
+			<div id="loading">  <!-- 正在加载的小圈儿 -->
+				<img src="img/loading.gif" alt="" /><br />
+				<span>正在加载...</span>
+			</div>
+			
+			<div id="gameover">  <!-- 游戏结束的框框 -->
+				<div>
+					<p>游戏结束</p>
+				</div>
+			</div>
+			
+		</div>
+	</body>
+	<script src="js/gameme.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/sourcesme.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var canvas = document.querySelector('#cvs');  //canvas画布
+		var loading = doucment.querySelector('loading');  //loading小圈儿
+		var gameover = document.querySelector('#gameover');  //游戏结束的框框
+		var cvs = canvas.getContext('2d');
+		var audios = {},images = {};
+		var i = 0;
+		var len = audio_sources.length;
+		var bgOffetY = 0,isOver = false;  //bgOffetY 背景Y值,isOver 游戏是否结束.
+		
+		loadAudios(function(){  //加载音频资源
+			i = 0;
+			len = image_sources.length;
+			//重置i和len的值,继续加载图片资源
+			loadImages(function(){  //加载图片资源
+				audios.bgsound.loop = true;
+				//设置背景音乐循环播放
+				audios.bgsound.play();
+				//当资源加载完成,播放背景音乐
+				gameStart();
+			})
+		})
+	</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>响应式瀑布流2</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#wrap{
+				position: relative;
+				list-style: none;
+				margin: 0 auto;
+			}
+			#wrap li{
+				position: absolute;
+				width: 200px;
+				transition: all .5s linear;
+				background: palegreen;
+				font-size: 5em;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<ul id="wrap"></ul>
+	</body>
+	<script type="text/javascript">
+		function randFn(min,max){
+			return parseInt(Math.random()*(max-min+1)+min)
+		}
+		var lis = []
+		var liHeight = []
+		function createLi(num,bol){
+			var width = 200;
+			var padding = 10;
+			var wrap = document.getElementById("wrap")
+			var winWidth = document.documentElement.clientWidth
+			var cols = parseInt(winWidth/(width+padding*2))
+			wrap.style.width = cols*(width+padding*2) + "px"
+			var heightArr = []
+			for(var i = 0;i < cols; i ++){
+				heightArr[i] = 0;
+			}
+			for(var i = 0;i < num;i ++){
+				var li = lis[i]||document.createElement("li")
+				li.innerHTML = i
+				var height = liHeight[i]||randFn(300,100)
+				li.style.height = height + "px"
+				li.style.lineHeight = height + "px"
+				if(bol){
+					lis.push(li)
+					liHeight.push(height)
+				}
+				var minHeight = heightArr[0]
+				var minIndex = 0
+				for(var j = 0;j < heightArr.length;j ++){
+					if(minHeight > heightArr[j]){
+						minHeight = heightArr[j]
+						minIndex = j
+					}
+				}
+				li.style.top = heightArr[minIndex] + "px"
+				li.style.left = (width + padding*2)*minIndex + "px"
+				heightArr[minIndex] += (height + padding*2)
+				if(bol){
+					wrap.appendChild(li)
+				}
+			}
+		}
+		createLi(100,true)
+		window.onresize = function(){
+			createLi(100,false)
+		}
+	</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
