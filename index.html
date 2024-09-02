@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<!-- <script src="https://unpkg.com/vue@next"></script> -->
+		<script src="js/v3.2.8/vue.global.prod.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<style>
+		* {
+			margin: 0;
+		}
+
+		body {
+			width: 100vw;
+			height: 100vh;
+			background: #000;
+		}
+
+		#app {
+			height: 100vh;
+			font-size: 400px;
+			height: 100vh;
+			color: #fff;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-weight: bold;
+		}
+	</style>
+	<body>
+		<div id="app">
+			<span>{{ counter }}</span>
+
+		</div>
+		<script>
+			const App = {
+				data() {
+					return {
+						counter: formatTimestamp(new Date().toString())
+					}
+				},
+				methods: {
+					auto() {
+						this.counter = formatTimestamp(new Date().toString())
+					}
+				},
+				mounted() {
+
+					setInterval(() => {
+						this.auto()
+					}, 1000)
+				}
+			};
+			Vue.createApp(App).mount('#app');
+
+			function formatTimestamp(timestamp) {
+				const date = new Date(timestamp);
+				const year = date.getFullYear();
+				const month = addZero(date.getMonth() + 1);
+				const day = addZero(date.getDate());
+				const hours = addZero(date.getHours());
+				const minutes = addZero(date.getMinutes());
+				const seconds = addZero(date.getSeconds());
+				// return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+				return `${hours}:${minutes}:${seconds}`;
+			}
+
+			function addZero(value) {
+				return value < 10 ? `0${value}` : value;
+			}
+		</script>
+	</body>
+</html>
